@@ -65,6 +65,8 @@ RUN apt-get update && apt-get install -y jenkins
 ##--------------------------------------
 ENV SHELL /bin/bash
 ENV JENKINS_HOME /usr/share/jenkins
+WORKDIR /usr/share/jenkins
+RUN ["chown", "ffdev:ffdev", "-R", "/usr/share/jenkins"]
 USER ffdev
 
 ENTRYPOINT ["java", "-jar", "/usr/share/jenkins/jenkins.war"]
