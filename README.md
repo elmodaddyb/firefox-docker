@@ -24,6 +24,10 @@ This is due to the scale of the data saved.  Re-pulling the full Mozilla Central
 sudo docker run -d -p 8080:8080 -v /home/local/path:/opt/jenkins -i myuser/firefox-docker:v1
 ```
 
+##### Manage Jenkins
+Set the Jenkins workspace directory to the volume referenced by `/opt/jenkins`
+
+> Manage Jenkins -> Jenkins Home -> Advanced -> workspace = /opt/jenkins/workspace
 
 #### Saving the Jenkins Configuration
 
