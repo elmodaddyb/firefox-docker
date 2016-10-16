@@ -22,7 +22,6 @@ This is due to the scale of the data saved.  Re-pulling the full Mozilla Central
 
 ```
 sudo docker run -d -p 8080:8080 -v /home/local/path:/opt/jenkins -i myuser/firefox-docker:v1
-
 ```
 
 
@@ -34,17 +33,13 @@ The docker image does not contain any build jobs.  You must create a build job t
 
 1. Install the `Mercurial Plugin`
 2. Setup a Mercurial module to the Mozilla Central code
-    ```
-    https://hg.mozilla.org/mozilla-central
-    ```
+    > https://hg.mozilla.org/mozilla-central
+    
 3. Set up job to `Build Periodically`
-    ```
-    H H * * *
-    ```
+    > H H * * *
 4. Set up `Execute Shell`
-    ```
-    ./mach clobber && ./mach build && ./mach package
-    ```
+    
+    > ./mach clobber && ./mach build && ./mach package
 
 ##### Commit the Docker Image
 
