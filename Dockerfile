@@ -35,6 +35,8 @@ RUN apt-get update && apt-get install -y \
     libiw-dev \
     libxt-dev \
     libx11-dev \
+    xorg-dev \
+    libx11-xcb-dev \
     mesa-common-dev \
     libgstreamer0.10-dev \
     libgstreamer-plugins-base0.10-dev \
@@ -51,6 +53,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN groupadd ffdev -g 1001\
   && useradd -g ffdev -s /bin/bash ffdev
+
+RUN echo "ffdev:changeit" | chpasswd
 
 ##--------------------------------------
 ## Install Jenkins
