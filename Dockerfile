@@ -26,6 +26,7 @@ RUN apt-get update && apt-get install -y \
     autoconf2.13 \
     yasm \
     libgtk2.0-dev \
+    libgtk-3-dev \
     libglib2.0-dev \
     libdbus-1-dev \
     libdbus-glib-1-dev \
@@ -33,6 +34,7 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libiw-dev \
     libxt-dev \
+    libx11-dev \
     mesa-common-dev \
     libgstreamer0.10-dev \
     libgstreamer-plugins-base0.10-dev \
