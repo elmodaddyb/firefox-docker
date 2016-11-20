@@ -45,6 +45,13 @@ The docker image does not contain any build jobs.  You must create a build job t
     
     > ./mach clobber && ./mach build && ./mach package
 
+5. Commit the package to Nexus repository
+
+```
+curl -v --user 'user:password' --upload-file /opt/jenkins/workspace/FirefoxBuild/obj-x86_64-pc-linux-gnu/dist/firefox-53.0a1.en-US.linux-x86_64.tar.bz2 \
+http://localhost:8081/repository/firefox-builds/firefox-53.0a1.en-US.linux-x86_64.tar.bz2
+```
+
 ##### Commit the Docker Image
 
 ```
