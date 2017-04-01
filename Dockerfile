@@ -38,14 +38,15 @@ RUN apt-get update && apt-get install -y \
     xorg-dev \
     libx11-xcb-dev \
     mesa-common-dev \
-    libgstreamer0.10-dev \
-    libgstreamer-plugins-base0.10-dev \
+    libgstreamer1.0-dev \
+    libgstreamer-plugins-base1.0-dev \
     libpulse-dev \
     m4 \
     flex \
     ccache \
     gconf-2.0 \
-    libgconf2-dev
+    libgconf2-dev \
+    rustc
 
 ##--------------------------------------
 ## Create the firefox dev user
@@ -74,6 +75,11 @@ ENV JENKINS_HOME /usr/share/jenkins
 WORKDIR /usr/share/jenkins
 RUN ["chown", "ffdev:ffdev", "-R", "/usr/share/jenkins"]
 USER ffdev
+
+##--------------------------------------
+## Set local time to EST
+##--------------------------------------
+RUN ln -sf /usr/share/zoneinfo/US/Eastern /etc/localtime
 
 ENTRYPOINT ["java", "-jar", "/usr/share/jenkins/jenkins.war"]
 EXPOSE 8080
